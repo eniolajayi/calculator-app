@@ -1,5 +1,4 @@
-document.querySelector('#app').innerHTML = `
-  <div>
-   <h1>Calculator</h1>
-  </div>
-`
+import { createRoot } from 'react-dom/client';
+
+const root = createRoot(document.getElementById('app'));
+root.render(<h1>Calculator</h1>);
