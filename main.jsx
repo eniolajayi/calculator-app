@@ -1,5 +1,5 @@
-import { createRoot } from "react-dom/client";
 import "./style.css";
+import { createRoot } from "react-dom/client";
 import Keyboard from "./keyboard";
 
 function Calculator() {
