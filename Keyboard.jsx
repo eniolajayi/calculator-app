@@ -1,26 +1,127 @@
-export default function Keyboard() {
+function Keyboard({ onButtonPressed }) {
+  const handleButtonClick = (event, data) => {
+    onButtonPressed(data);
+  };
+
+  const buttonKeys = [
+    {
+      type: "operator",
+      symbol: "CE",
+      name: "clear-entry",
+    },
+    {
+      type: "operator",
+      symbol: "C",
+      name: "clear-all",
+    },
+    {
+      type: "operator",
+      symbol: "%",
+      name: "percent",
+    },
+    {
+      type: "operator",
+      symbol: "÷",
+      name: "divide",
+    },
+    {
+      type: "number",
+      symbol: "7",
+      name: "seven",
+    },
+    {
+      type: "number",
+      symbol: "8",
+      name: "eight",
+    },
+    {
+      type: "number",
+      symbol: "9",
+      name: "nine",
+    },
+    {
+      type: "operator",
+      symbol: "×",
+      name: "multiply",
+    },
+    {
+      type: "number",
+      symbol: "4",
+      name: "four",
+    },
+    {
+      type: "number",
+      symbol: "5",
+      name: "five",
+    },
+    {
+      type: "number",
+      symbol: "6",
+      name: "six",
+    },
+    {
+      type: "operator",
+      symbol: "-",
+      name: "subtract",
+    },
+    {
+      type: "number",
+      symbol: "1",
+      name: "one",
+    },
+    {
+      type: "number",
+      symbol: "2",
+      name: "two",
+    },
+    {
+      type: "number",
+      symbol: "3",
+      name: "three",
+    },
+    {
+      type: "operator",
+      symbol: "+",
+      name: "add",
+    },
+    {
+      type: "empty",
+      symbol: "",
+      name: "empty",
+    },
+    {
+      type: "number",
+      symbol: "0",
+      name: "zero",
+    },
+    {
+      type: "empty",
+      symbol: "",
+      name: "empty",
+    },
+    {
+      type: "operator",
+      symbol: "=",
+      name: "equals",
+    },
+  ];
+
   return (
     <div className="keyboard">
-      <button class="operator">C</button>
-      <button class="operator">CE</button>
-      <button class="operator">%</button>
-      <button class="operator">&#247;</button>
-      <button class="number">7</button>
-      <button class="number">8</button>
-      <button class="number">9</button>
-      <button class="operator">&times;</button>
-      <button class="number">4</button>
-      <button class="number">5</button>
-      <button class="number">6</button>
-      <button class="operator">-</button>
-      <button class="number">1</button>
-      <button class="number">2</button>
-      <button class="number">3</button>
-      <button class="operator">+</button>
-      <button class="empty"></button>
-      <button class="number">0</button>
-      <button class="empty"></button>
-      <button class="operator">=</button>
+      {buttonKeys.map((k, idx) => {
+        return (
+          <button
+            key={idx}
+            data-keytype={k.type}
+            className={`key ${k.type}`}
+            onClick={(e) => handleButtonClick(e, k)}
+          >
+            {k.symbol}
+          </button>
+        );
+      })}
     </div>
   );
 }
+
+export default Keyboard;
