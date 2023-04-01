@@ -1,5 +1,6 @@
 import { createRoot } from "react-dom/client";
 import "./style.css";
+import Keyboard from "./keyboard";
 
 function Calculator() {
   return (
@@ -12,6 +13,7 @@ function Calculator() {
           <p className="output__value"></p>
         </div>
       </div>
+      <Keyboard />
     </div>
   );
 }
