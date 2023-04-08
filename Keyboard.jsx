@@ -59,7 +59,7 @@ const KEYS = [
   },
   {
     type: "operator",
-    symbol: "×",
+    symbol: "*",
     name: "multiply",
   },
   {
