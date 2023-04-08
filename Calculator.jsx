@@ -15,7 +15,11 @@ function Calculator() {
           <p className="output__value">{output}</p>
         </div>
       </div>
-      <Keyboard />
+      <Keyboard
+        onButtonPressed={(data) => {
+          console.log(data);
+        }}
+      />
     </div>
   );
 }
