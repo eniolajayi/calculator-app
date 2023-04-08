@@ -21,13 +21,16 @@ function Calculator() {
           if (data.type === "operator" && data.name === "clear-entry") {
             let newHistory = history.substring(0, history.length - 1);
             setHistory(newHistory);
-          }
-          if (data.type === "operator" && data.name === "clear-all") {
+          } else if (data.type === "operator" && data.name === "clear-all") {
             setHistory("");
             setOutput("");
-          }
-          if (data.type === "number") {
+          } else if (data.type === "operator" && data.name === "equals") {
+            let result = eval(history);
+            setOutput(result);
+          } else if (data.type === "number" || data.type === "operator") {
             setHistory(history + data.symbol);
+          } else {
+            console.log("nill");
           }
         }}
       />
