@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Keyboard from "./Keyboard";
+import Keyboard from "./keyboard";
 
 function Calculator() {
   const [output, setOutput] = useState("");
