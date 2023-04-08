@@ -18,6 +18,17 @@ function Calculator() {
       <Keyboard
         onButtonPressed={(data) => {
           console.log(data);
+          if (data.type === "operator" && data.name === "clear-entry") {
+            let newHistory = history.substring(0, history.length - 1);
+            setHistory(newHistory);
+          }
+          if (data.type === "operator" && data.name === "clear-all") {
+            setHistory("");
+            setOutput("");
+          }
+          if (data.type === "number") {
+            setHistory(history + data.symbol);
+          }
         }}
       />
     </div>
