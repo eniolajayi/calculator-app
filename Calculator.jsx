@@ -76,21 +76,34 @@ const result = css`
 const keyboard = css`
   display: grid;
   background-color: #eee;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
+  position: relative;
 `;
 
 const button = css`
   all: unset;
   font: inherit;
-  color: #862e9c;
-  border: 1px solid;
-  border-radius: 4px;
+  color: #090400;
+  border: 0.5px solid;
   padding: 0.5rem 1rem;
+  text-align: center;
+  font-family: sans-serif;
 
   &:hover,
   &:focus {
-    color: #be4bdb;
+    color: #db854b;
+  }
+
+  &.equals {
+    grid-column: 4 / 5;
+    grid-row: 6 / 2;
+  }
+
+  &.clear-entry {
+    grid-column: 3/4;
+    grid-row: 6/5;
+    position: absolute;
   }
 `;
 
