@@ -28,7 +28,7 @@ function Calculator() {
   return (
     <div className={wrapper}>
       <div className={calculator}>
-        <div className="result">
+        <div className={result}>
           <div className="history">
             <div className="history__value">{history}</div>
           </div>
