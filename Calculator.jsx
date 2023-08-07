@@ -5,9 +5,11 @@ import keys from "./data";
 function Calculator() {
   const [output, setOutput] = useState("");
   const [history, setHistory] = useState("");
+
   const calculate = (data) => {
     return eval(data);
   };
+
   const handleButtonClick = (event, data) => {
     if (data.type === "operator" && data.name === "clear-entry") {
       let newHistory = history.substring(0, history.length - 1);
@@ -104,6 +106,7 @@ const button = css`
     grid-column: 3/4;
     grid-row: 6/5;
     position: absolute;
+    display: none;
   }
 `;
 
