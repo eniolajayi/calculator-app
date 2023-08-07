@@ -41,8 +41,9 @@ function Calculator() {
             return (
               <button
                 key={idx}
-                data-action={k.type === "operator" ? k.name : k.type}
-                className={`key ${k.type} ${button}`}
+                className={`${
+                  k.type === "operator" ? k.name : k.type
+                } ${button}`}
                 onClick={(e) => handleButtonClick(e, k)}
               >
                 {k.symbol === "*" ? <>&times;</> : k.symbol}
