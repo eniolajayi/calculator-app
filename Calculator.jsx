@@ -62,7 +62,15 @@ const wrapper = css`
   place-items: center;
 `;
 
-const calculator = css``;
+const calculator = css`
+  max-inline-size: 220px;
+  min-inline-size: 220px;
+`;
+
+const result = css`
+  overflow-x: scroll;
+  background-color: #090400;
+`;
 
 const keyboard = css`
   display: grid;
